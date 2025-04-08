@@ -8,6 +8,12 @@ name: Publish Docker Github Package
 on:
   release:
     types: [published]
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Docker TAG"
+        required: true
+        default: "master"
 
 jobs:
   push_to_registries:
